@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cfi0ttf048ko7"]
+[gd_scene load_steps=2 format=3 uid="uid://cfi0ttf048ko7"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_dph7i"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_dph7i")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -30,3 +33,5 @@ placeholder_text = "192.168.0.0"
 spawn_path = NodePath("../Level")
 
 [node name="Level" type="Node" parent="."]
+
+[connection signal="pressed" from="UI/HostButton" to="." method="_on_host_button_pressed"]
