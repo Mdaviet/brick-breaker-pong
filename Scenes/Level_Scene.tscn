@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce8ertfaq6lv8"]
+[gd_scene load_steps=6 format=3 uid="uid://ce8ertfaq6lv8"]
 
 [ext_resource type="Texture2D" uid="uid://cdauffeeo6x15" path="res://Art/Background.png" id="1_ssi4a"]
 [ext_resource type="PackedScene" uid="uid://cxd2h8gidf36u" path="res://Scenes/Paddle_Prefab.tscn" id="2_3isa6"]
 [ext_resource type="PackedScene" uid="uid://cks345hggciab" path="res://Scenes/Block_Prefab.tscn" id="3_uyluv"]
 [ext_resource type="PackedScene" uid="uid://beuuuk8kkb8ay" path="res://Scenes/Ball_Prefab.tscn" id="4_bw5kr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_27kq1"]
+bounce = 1.0
 
 [node name="LevelScene" type="Node2D"]
 
@@ -16,18 +19,18 @@ zoom = Vector2(0.9, 0.9)
 [node name="BlockPrefab" parent="." instance=ExtResource("3_uyluv")]
 position = Vector2(0, 2)
 
+[node name="BallPrefab" parent="." instance=ExtResource("4_bw5kr")]
+position = Vector2(-568, 0)
+physics_material_override = SubResource("PhysicsMaterial_27kq1")
+
 [node name="PaddlePrefab" parent="." instance=ExtResource("2_3isa6")]
 position = Vector2(-576, 0)
 playerNumber = 1
 
-[node name="BallPrefab" parent="PaddlePrefab" instance=ExtResource("4_bw5kr")]
-position = Vector2(8, 0)
+[node name="BallPrefab2" parent="." instance=ExtResource("4_bw5kr")]
+position = Vector2(568, -280)
 
 [node name="PaddlePrefab2" parent="." instance=ExtResource("2_3isa6")]
 position = Vector2(576, 0)
 rotation = -3.14159
 playerNumber = 2
-
-[node name="BallPrefab2" parent="PaddlePrefab2" instance=ExtResource("4_bw5kr")]
-position = Vector2(8, -3.55402e-05)
-rotation = 3.14159

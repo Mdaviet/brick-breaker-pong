@@ -13,6 +13,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	
+	
 	if (playerNumber == 1):
 		velocity.y = P1getVerticalInput() * paddleSpeed
 		

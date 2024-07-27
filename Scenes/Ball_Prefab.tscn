@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://beuuuk8kkb8ay"]
+[gd_scene load_steps=5 format=3 uid="uid://beuuuk8kkb8ay"]
 
-[ext_resource type="Script" path="res://Scenes/BallController.gd" id="1_7gos6"]
+[ext_resource type="Script" path="res://Scripts/BallController.gd" id="1_13xx6"]
 [ext_resource type="Texture2D" uid="uid://cyjacw61amego" path="res://Art/Ball.png" id="1_rkgha"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7qtit"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iatuq"]
 radius = 4.5
 
 [node name="BallPrefab" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_7qtit")
 gravity_scale = 0.0
-script = ExtResource("1_7gos6")
+script = ExtResource("1_13xx6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iatuq")

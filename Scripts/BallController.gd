@@ -4,4 +4,8 @@ extends RigidBody2D
 @export var ballSize : float
 
 func _ready():
-	add_constant_force(Vector2(-100,10), Vector2(0,0))
+	apply_impulse(Vector2(-300, 100), Vector2(0, 0))
+	
+func _physics_processs():
+	pass
+
