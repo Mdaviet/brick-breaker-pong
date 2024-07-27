@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cks345hggciab"]
+
+[ext_resource type="Texture2D" uid="uid://rlfcuw3rtyuk" path="res://Art/Block.png" id="1_jnyso"]
+[ext_resource type="PackedScene" uid="uid://bl5jmycw6h41e" path="res://Scenes/Color_Manager.tscn" id="2_4fjkq"]
+
+[node name="BlockPrefab" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jnyso")
+
+[node name="ColorManager" parent="Sprite2D" instance=ExtResource("2_4fjkq")]

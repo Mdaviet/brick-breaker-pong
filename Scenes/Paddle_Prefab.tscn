@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxd2h8gidf36u"]
+
+[ext_resource type="Texture2D" uid="uid://b30i5sa4gkjol" path="res://Art/Paddle.png" id="1_7xgkm"]
+[ext_resource type="PackedScene" uid="uid://bl5jmycw6h41e" path="res://Scenes/Color_Manager.tscn" id="2_y5mpo"]
+
+[node name="PaddlePrefab" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7xgkm")
+
+[node name="ColorManager" parent="Sprite2D" instance=ExtResource("2_y5mpo")]

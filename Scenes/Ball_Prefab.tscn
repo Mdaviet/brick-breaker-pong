@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://beuuuk8kkb8ay"]
+
+[node name="BallPrefab" type="Node2D"]
