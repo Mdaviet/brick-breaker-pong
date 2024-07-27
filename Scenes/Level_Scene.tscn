@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://ce8ertfaq6lv8"]
+[gd_scene load_steps=4 format=3 uid="uid://ce8ertfaq6lv8"]
+
+[ext_resource type="Texture2D" uid="uid://cdauffeeo6x15" path="res://Art/Background.png" id="1_ssi4a"]
+[ext_resource type="PackedScene" uid="uid://cxd2h8gidf36u" path="res://Scenes/Paddle_Prefab.tscn" id="2_3isa6"]
+[ext_resource type="PackedScene" uid="uid://cks345hggciab" path="res://Scenes/Block_Prefab.tscn" id="3_uyluv"]
 
 [node name="LevelScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ssi4a")
+
+[node name="PaddlePrefab" parent="." instance=ExtResource("2_3isa6")]
+position = Vector2(-587, 1)
+
+[node name="PaddlePrefab2" parent="." instance=ExtResource("2_3isa6")]
+position = Vector2(581, 1)
+rotation = -3.14159
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[node name="BlockPrefab" parent="." instance=ExtResource("3_uyluv")]
+position = Vector2(0, 2)

@@ -4,4 +4,4 @@ extends Node
 
 func _ready():
 	parentSprite = get_parent()
-	parentSprite.modulate = Color8(randi_range(0, 255), randi_range(0, 255), randi_range(0, 255), 255)
+	parentSprite.modulate = Color8(randi_range(30, 255), randi_range(30, 255), randi_range(30, 255), 255)
