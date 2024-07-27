@@ -10,18 +10,24 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ssi4a")
 
-[node name="PaddlePrefab" parent="." instance=ExtResource("2_3isa6")]
-position = Vector2(-587, 1)
-
-[node name="PaddlePrefab2" parent="." instance=ExtResource("2_3isa6")]
-position = Vector2(581, 1)
-rotation = -3.14159
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
 
 [node name="BlockPrefab" parent="." instance=ExtResource("3_uyluv")]
 position = Vector2(0, 2)
 
-[node name="BallPrefab" parent="." instance=ExtResource("4_bw5kr")]
-position = Vector2(-296, 56)
+[node name="PaddlePrefab" parent="." instance=ExtResource("2_3isa6")]
+position = Vector2(-576, 0)
+playerNumber = 1
+
+[node name="BallPrefab" parent="PaddlePrefab" instance=ExtResource("4_bw5kr")]
+position = Vector2(8, 0)
+
+[node name="PaddlePrefab2" parent="." instance=ExtResource("2_3isa6")]
+position = Vector2(576, 0)
+rotation = -3.14159
+playerNumber = 2
+
+[node name="BallPrefab2" parent="PaddlePrefab2" instance=ExtResource("4_bw5kr")]
+position = Vector2(8, -3.55402e-05)
+rotation = 3.14159
