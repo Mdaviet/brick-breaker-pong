@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cks345hggciab"]
+[gd_scene load_steps=4 format=3 uid="uid://cks345hggciab"]
 
 [ext_resource type="Texture2D" uid="uid://rlfcuw3rtyuk" path="res://Art/Block.png" id="1_jnyso"]
 [ext_resource type="PackedScene" uid="uid://bl5jmycw6h41e" path="res://Scenes/Color_Manager.tscn" id="2_4fjkq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdk72"]
+size = Vector2(32, 16)
 
 [node name="BlockPrefab" type="Node2D"]
 
@@ -10,3 +13,8 @@ texture_filter = 1
 texture = ExtResource("1_jnyso")
 
 [node name="ColorManager" parent="Sprite2D" instance=ExtResource("2_4fjkq")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kdk72")
