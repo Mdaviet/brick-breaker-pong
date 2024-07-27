@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cfi0ttf048ko7"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HostButton" type="Button" parent="UI"]
+offset_top = 88.0
+offset_right = 44.0
+offset_bottom = 119.0
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="UI"]
+offset_top = 144.0
+offset_right = 38.0
+offset_bottom = 175.0
+text = "Join
+"
+
+[node name="HostAddressLineEdit" type="LineEdit" parent="UI"]
+offset_right = 148.0
+offset_bottom = 31.0
+placeholder_text = "192.168.0.0"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../Level")
+
+[node name="Level" type="Node" parent="."]
