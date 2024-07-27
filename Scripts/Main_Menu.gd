@@ -1,31 +1,14 @@
-#extends Node2D
-#
-#var peer = ENetMultiplayerPeer.new()
-#@export var player_prefab: PackedScene
-#
-#func _on_host_pressed():
-	#peer.create_server(135)
-	#multiplayer.multiplayer_peer = peer
-	#start_game()
-#
-#func _on_join_pressed():
-	#peer.create_client("localhost", 135)
-	#multiplayer.multiplayer_peer = peer
-	#start_game()
-#
-#func start_game():
-	#$UI.hide()
-	#
-	#var level = $Level
-	#var levelScene = load("res://Scenes/Dev_Sandbox_Z.tscn")
-	#level.add_child(levelScene.instantiate())
-	#
 extends Node2D
 
 var peer = ENetMultiplayerPeer.new()
 
 func _on_host_button_pressed():
 	peer.create_server(135)
+	multiplayer.multiplayer_peer = peer
+	start_game()
+
+func _on_join_button_pressed():
+	peer.create_client("localhost", 135)
 	multiplayer.multiplayer_peer = peer
 	start_game()
 
