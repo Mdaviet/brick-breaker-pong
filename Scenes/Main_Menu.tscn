@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfi0ttf048ko7"]
+
+[ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_dph7i"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_dph7i")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HostButton" type="Button" parent="UI"]
+offset_top = 88.0
+offset_right = 44.0
+offset_bottom = 119.0
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="UI"]
+offset_top = 144.0
+offset_right = 38.0
+offset_bottom = 175.0
+text = "Join
+"
+
+[node name="HostAddressLineEdit" type="LineEdit" parent="UI"]
+offset_right = 148.0
+offset_bottom = 31.0
+placeholder_text = "192.168.0.0"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/Level_Scene.tscn")
+spawn_path = NodePath("../Level")
+spawn_limit = 1
+
+[node name="Level" type="Node" parent="."]
+
+[connection signal="pressed" from="UI/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="UI/JoinButton" to="." method="_on_join_button_pressed"]
